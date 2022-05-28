@@ -63,15 +63,12 @@ class Login extends Component {
   onSubmitForm = async (event) => {
     event.preventDefault();
     let user = this.state.field;
-    console.log(user);
     axios
       .post("http://localhost:8000/login", user)
       .then((data) => {
-        console.log("data sent  :  ", data.data);
         this.setState({ faceEncoding: data.data });
       })
       .catch((err) => {
-        console.log(err.response.data.message);
         this.setState({ errorFromApi: err.response.data.message });
       });
   };

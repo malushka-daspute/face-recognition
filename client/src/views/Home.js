@@ -81,7 +81,6 @@ class Home extends Component {
   };
 
   userImageLoad = (faceImage) => {
-    console.log("faceImage   ::    ", faceImage);
     this.setState({ faceImage: faceImage, isModalOpen: false });
   };
 

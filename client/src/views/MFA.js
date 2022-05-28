@@ -77,7 +77,6 @@ class MFA extends Component {
         this.webcam.current.getScreenshot(),
         inputSize
       ).then(async (fullDesc) => {
-        console.log("Video  :  ", fullDesc);
         if (fullDesc && fullDesc.length > 0) {
           await this.setState({
             descriptors: fullDesc[0].descriptor,
@@ -93,7 +92,6 @@ class MFA extends Component {
               fullDesc[0].descriptor,
               this.state.descriptorsVideo[0]
             );
-            console.log(distance);
             if (distance < 0.62) {
               console.log("Congratulations!!!");
               this.setState({ isValidUser: true, faceNotRecognizeCount: 0 });

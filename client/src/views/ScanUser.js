@@ -65,7 +65,6 @@ class ScanUser extends Component {
     if (!!this.webcam.current) {
       const img = this.webcam.current.getScreenshot();
       await getFullFaceDescription(img, inputSize).then(async (fullDesc) => {
-        console.log("Video  :  ", fullDesc);
         if (fullDesc && fullDesc.length === 1) {
           clearInterval(this.interval);
           this.setState({
@@ -77,7 +76,6 @@ class ScanUser extends Component {
             message: "",
           });
         } else if (fullDesc.length > 1) {
-          console.log("multiple faces");
           this.setState({ messageError: "Multiple faces detected" });
         } else {
           this.setState({
@@ -96,7 +94,6 @@ class ScanUser extends Component {
     axios
       .post("http://localhost:8000/newUser", userInfo)
       .then((data) => {
-        console.log(data);
         this.setState({
           isUserUpdatedInDB: true,
           facingMode: null,
