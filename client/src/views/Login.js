@@ -64,7 +64,7 @@ class Login extends Component {
     event.preventDefault();
     let user = this.state.field;
     axios
-      .post("https://face-recognition-2fa.herokuapp.com:8000/login", user)
+      .post("http://localhost:8000/login", user)
       .then((data) => {
         this.setState({ faceEncoding: data.data });
       })

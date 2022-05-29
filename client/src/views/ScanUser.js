@@ -92,7 +92,7 @@ class ScanUser extends Component {
     userInfo["faceEncoding"] = this.state.image;
 
     axios
-      .post("https://face-recognition-2fa.herokuapp.com:8000/newUser", userInfo)
+      .post("http://localhost:8000/newUser", userInfo)
       .then((data) => {
         this.setState({
           isUserUpdatedInDB: true,
