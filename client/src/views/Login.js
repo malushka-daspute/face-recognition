@@ -64,7 +64,7 @@ class Login extends Component {
     event.preventDefault();
     let user = this.state.field;
     axios
-      .post("http://localhost:8000/login", user)
+      .post("http://54.227.162.67:5000/login", user)
       .then((data) => {
         this.setState({ faceEncoding: data.data });
       })

@@ -92,7 +92,7 @@ class ScanUser extends Component {
     userInfo["faceEncoding"] = this.state.image;
 
     axios
-      .post("http://localhost:8000/newUser", userInfo)
+      .post("http://54.227.162.67:5000/newUser", userInfo)
       .then((data) => {
         this.setState({
           isUserUpdatedInDB: true,
